@@ -21,11 +21,6 @@ html.pitch-deck body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Pitch uses <main class="pitch-stage">; skip the site-header offset. */
-html.pitch-deck body:not(.has-hero) main {
-  padding-top: 0;
-}
-
 /* ---- Screen toolbar (hidden when printing) ---- */
 .pitch-toolbar {
   position: fixed;
@@ -800,6 +795,10 @@ html.pitch-deck body:not(.has-hero) main {
 @media print {
   .pitch-toolbar {
     display: none !important;
+    position: static !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
   }
 
   html.pitch-deck,
@@ -811,8 +810,8 @@ html.pitch-deck body:not(.has-hero) main {
     -webkit-print-color-adjust: exact;
   }
 
-  html.pitch-deck body:not(.has-hero) main.pitch-stage,
-  .pitch-stage {
+  /* Beat body:not(.has-hero) main { padding-top: 5rem } from global.css. */
+  html.pitch-deck body:not(.has-hero) main.pitch-stage {
     display: block;
     padding: 0 !important;
     gap: 0;
