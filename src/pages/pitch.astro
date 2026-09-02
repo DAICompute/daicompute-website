@@ -1,0 +1,731 @@
+---
+import PitchDeck from "@/layouts/PitchDeck.astro";
+import Wordmark from "@/components/Wordmark.astro";
+import PartnerMark from "@/components/pitch/PartnerMark.astro";
+import {
+  markhamBase,
+  markhamScenarios,
+  conservativePilot,
+  assumptionLines,
+  scenarioLines,
+  fmtCadMillions,
+  fmtKtCo2e,
+  fmtVramPb,
+  fmtTxOnStock,
+  fmtGrossPaybackMonths,
+} from "@/data/markham-pilot";
+
+const slides = 13;
+
+function fmt(n: number): string {
+  return n.toLocaleString("en-CA");
+}
+
+function pct(p: number): string {
+  return `${(p * 100).toFixed(p < 0.01 ? 1 : 0)}%`;
+}
+---
+
+<PitchDeck
+  title="DAI Compute pitch deck"
+  description="Distributed energy resources (DERs) and distributed compute resources (DCRs). Sovereign Canadian financing for energy and compute with Aurora Nyxus, SyncI&DLabs, THE Media, and EverPresence."
+  slideCount={slides}
+>
+  <!-- 1. Title -->
+  <section class="slide" data-slide="1">
+    <p class="slide__eyebrow">Confidential</p>
+    <Wordmark variant="display" class="mt-6" />
+    <h1 class="pitch-hero-title">
+      Distributed energy.<br />
+      <span class="accent">Distributed compute.</span>
+    </h1>
+    <p class="slide__lede">
+      DAI Compute finances and aggregates Canadian DERs and DCRs so compute runs
+      on energy we own, under Canadian jurisdiction.
+    </p>
+    <div class="pitch-partners">
+      <div class="pitch-partners__item">
+        <span class="pitch-partners__label">Build partner</span>
+        <PartnerMark partner="aurora" />
+      </div>
+      <div class="pitch-partners__item">
+        <span class="pitch-partners__label">District partner</span>
+        <PartnerMark partner="syncid" />
+      </div>
+      <div class="pitch-partners__item">
+        <span class="pitch-partners__label">Sovereign-use pilot partner</span>
+        <PartnerMark partner="themedia" />
+      </div>
+      <div class="pitch-partners__item">
+        <span class="pitch-partners__label">Indigenous outreach partner</span>
+        <PartnerMark partner="everpresence" />
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">01 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 2. Problem -->
+  <section class="slide" data-slide="2">
+    <p class="slide__eyebrow">The problem</p>
+    <h2 class="slide__title slide__title--wide">Canada runs AI on foreign-owned infrastructure.</h2>
+    <div class="slide__body pitch-grid-2">
+      <div>
+        <ul class="pitch-list">
+          <li>
+            <span class="n">01</span>
+            <span>
+              Data centres on Canadian soil are often owned by American
+              corporations. Under the U.S. CLOUD Act, U.S. authorities can compel
+              access to data on those servers.
+            </span>
+          </li>
+          <li>
+            <span class="n">02</span>
+            <span>
+              Canada has clean power in places and almost no top-tier sovereign
+              compute. Energy without owned compute still leaves the AI layer
+              offshore.
+            </span>
+          </li>
+          <li>
+            <span class="n">03</span>
+            <span>
+              Builders who co-locate solar, batteries, and compute need financing
+              and a way to pool capacity while keeping physical custody.
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="pitch-card">
+        <p class="mono-label">One sentence</p>
+        <h3>Dependence is the product defect.</h3>
+        <p>
+          Every Canadian AI query that runs through foreign-jurisdicted
+          infrastructure runs through someone else’s law. We finance owned
+          energy and owned compute on Canadian soil.
+        </p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">02 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 3. Insight DER / DCR -->
+  <section class="slide" data-slide="3">
+    <p class="slide__eyebrow">The insight</p>
+    <h2 class="slide__title slide__title--wide">Power grids already use DERs. Compute needs DCRs.</h2>
+    <p class="slide__lede">
+      Distributed energy resources (solar, batteries) sit at the edge of the
+      grid. Distributed compute resources should sit beside them.
+    </p>
+    <div class="slide__body">
+      <div class="der-dcr">
+        <div class="der-dcr__box energy">
+          <p class="mono-label" style="color: var(--color-yellow);">DER</p>
+          <h3 style="margin:0;font-family:var(--font-display);font-size:1.25rem;">
+            Distributed Energy Resource
+          </h3>
+          <p style="margin:0.6rem 0 0;color:var(--color-mist);font-size:0.92rem;line-height:1.45;">
+            Rooftop PV, battery energy storage (BESS), and other generation at
+            the household or site. The power grid already knows how to
+            aggregate these.
+          </p>
+        </div>
+        <div class="der-dcr__arrow" aria-hidden="true">same pattern →</div>
+        <div class="der-dcr__box compute">
+          <p class="mono-label">DCR</p>
+          <h3 style="margin:0;font-family:var(--font-display);font-size:1.25rem;">
+            Distributed Compute Resource
+          </h3>
+          <p style="margin:0.6rem 0 0;color:var(--color-mist);font-size:0.92rem;line-height:1.45;">
+            Owned compute co-located with PV and BESS. Surplus clean energy
+            powers a node. Capacity joins a Canadian pool.
+          </p>
+        </div>
+      </div>
+      <p class="pitch-note">
+        We use DCR the way the energy industry uses DER: countable edge assets
+        that can be financed, attested, and aggregated. The energy layer is the
+        proven market. The compute layer is where transaction density sits.
+      </p>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">03 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 4. What we do -->
+  <section class="slide" data-slide="4">
+    <p class="slide__eyebrow">What we do</p>
+    <h2 class="slide__title">A two-sided credit market for energy and compute.</h2>
+    <div class="slide__body pitch-grid-2">
+      <div class="pitch-card">
+        <p class="mono-label">Depositors</p>
+        <h3>Fund Canadian assets.</h3>
+        <p>
+          Capital backs physical energy and compute on Canadian soil. Yield
+          comes from financing real infrastructure.
+        </p>
+      </div>
+      <div class="pitch-card">
+        <p class="mono-label">Builders</p>
+        <h3>Finance PV, BESS, and DCR nodes.</h3>
+        <p>
+          Borrow against the infrastructure you build. Co-locate compute with
+          generation so each megawatt-hour does more than export to the grid.
+          Each site finances PV and BESS and DCR because the compute layer turns
+          surplus megawatt-hours into a denser transaction than bill-offset
+          energy.
+        </p>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">04 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 5. Who does what -->
+  <section class="slide" data-slide="5">
+    <p class="slide__eyebrow">Who does what</p>
+    <h2 class="slide__title slide__title--wide">Aggregator of aggregators, plus builders and use cases.</h2>
+    <div class="slide__body">
+      <div class="role-flow role-flow--5">
+        <div class="pitch-card">
+          <p class="mono-label">DAI Compute</p>
+          <h3>Standard and financing</h3>
+          <p>
+            Defines how energy and compute aggregators qualify. Runs the credit
+            layer. Aggregates aggregators of DERs and DCRs into a sovereign
+            Canadian pool.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">Aurora Nyxus</p>
+          <h3>Build and deploy</h3>
+          <p>
+            Practical builder and deployer of local compute aggregators and mesh
+            nodes. Turns financed capacity into installed DCRs.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">SyncI&amp;DLabs</p>
+          <h3>District structure</h3>
+          <p>
+            Provides the structural design needed to develop an innovation
+            district that can host a concentration of distributed AI assets,
+            with a civic path to the City of Markham.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">THE Media</p>
+          <h3>Sovereign-use pilot</h3>
+          <p>
+            Campaign and election AI on sovereign Canadian hardware compute
+            models, so political AI work stays under Canadian custody.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">EverPresence</p>
+          <h3>Indigenous AI</h3>
+          <p>
+            Early-stage conversations on Indigenous AI integrations into the
+            compute marketplace, and place-based representation
+            (everpresence.ca).
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">05 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 6. How a node works -->
+  <section class="slide" data-slide="6">
+    <p class="slide__eyebrow">How a node works</p>
+    <h2 class="slide__title">One site. Energy, storage, compute.</h2>
+    <div class="slide__body pitch-grid-2">
+      <div class="node-stack">
+        <div class="node-stack__row energy">
+          <span class="tag">PV</span>
+          <p>Rooftop solar generates clean power at the site.</p>
+        </div>
+        <div class="node-stack__row storage">
+          <span class="tag">BESS</span>
+          <p>Battery stores surplus for evening and overnight loads.</p>
+        </div>
+        <div class="node-stack__row compute">
+          <span class="tag">DCR</span>
+          <p>
+            Mixed old and current-gen cards sized by surplus power after
+            household load. Surplus is the high-activity path. Capacity joins
+            the pool as aggregate VRAM.
+          </p>
+        </div>
+      </div>
+      <div>
+        <ul class="pitch-list">
+          <li>
+            <span class="n">01</span>
+            <span>Household or site keeps physical custody of the assets.</span>
+          </li>
+          <li>
+            <span class="n">02</span>
+            <span>
+              DAI Compute finances and attests. Aurora Nyxus builds and operates
+              the local compute aggregator where needed.
+            </span>
+          </li>
+          <li>
+            <span class="n">03</span>
+            <span>
+              Aggregated DCRs become owned Canadian capacity that can be composed
+              across the pool.
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">06 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 7. Why Markham -->
+  <section class="slide" data-slide="7">
+    <p class="slide__eyebrow">Why Markham</p>
+    <h2 class="slide__title">A civic pilot city with dense ICT and roof stock.</h2>
+    <div class="slide__body pitch-grid-2">
+      <div>
+        <ul class="pitch-list">
+          <li>
+            <span class="n">01</span>
+            <span>
+              SyncI&amp;DLabs designs the district structure that can host
+              concentrated distributed AI assets, working with the City of
+              Markham.
+            </span>
+          </li>
+          <li>
+            <span class="n">02</span>
+            <span>
+              Markham has a large single-detached housing stock suitable for
+              rooftop PV and BESS, plus a dense technology employer base.
+            </span>
+          </li>
+          <li>
+            <span class="n">03</span>
+            <span>
+              THE Media pilots election and campaign AI on sovereign Canadian
+              hardware, so high-stakes political workloads stay on owned compute.
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="pitch-card">
+        <p class="mono-label">Verified base · StatCan 2021</p>
+        <div style="display:grid;gap:1rem;margin-top:0.75rem;">
+          <div class="pitch-stat">
+            <span class="pitch-stat__value">{fmt(markhamBase.privateHouseholds)}</span>
+            <span class="pitch-stat__label">Private households</span>
+          </div>
+          <div class="pitch-stat">
+            <span class="pitch-stat__value pitch-stat__value--energy">
+              {fmt(markhamBase.singleDetachedHomes)}
+            </span>
+            <span class="pitch-stat__label">
+              Single-detached (~{pct(markhamBase.singleDetachedShare)})
+            </span>
+          </div>
+          <div class="pitch-stat">
+            <span class="pitch-stat__value">{fmt(markhamBase.population)}</span>
+            <span class="pitch-stat__label">Population</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">07 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 8. Market math -->
+  <section class="slide" data-slide="8">
+    <p class="slide__eyebrow">Market math · bottom-up</p>
+    <h2 class="slide__title slide__title--wide">
+      Roofs to excess power to GPUs to VRAM.
+    </h2>
+    <p class="slide__lede" style="max-width: 48rem;">
+      Full usable-roof PV. Surplus after household load powers a mixed GPU
+      fleet. Count VRAM, not top-down TAM.
+    </p>
+    <div class="slide__body">
+      <table class="pitch-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Homes</th>
+            <th>PV</th>
+            <th>Excess energy</th>
+            <th>Older GPUs</th>
+            <th>Aggregate VRAM</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            markhamScenarios.map((s) => (
+              <tr class={s.id === "conservative" ? "hl" : undefined}>
+                <td>
+                  {s.label} ({pct(s.penetration)})
+                </td>
+                <td class="num">{fmt(s.nodes)}</td>
+                <td class="num">~{s.aggregatePvMw} MW</td>
+                <td class="num">~{s.excessEnergyGwh} GWh/yr</td>
+                <td class="num">{fmt(s.gpuCount)}</td>
+                <td class="num">{fmtVramPb(s.aggregateVramPb)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <ul class="pitch-fineprint">
+        {assumptionLines.map((line) => <li>{line}</li>)}
+        {scenarioLines.map((line) => <li>{line}</li>)}
+        <li>
+          Sources: {markhamBase.sources.households};{" "}
+          {markhamBase.sources.structure}; {markhamBase.sources.roof};{" "}
+          {markhamBase.sources.householdLoad}.
+        </li>
+      </ul>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">08 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 9. Pilot wedge -->
+  <section class="slide" data-slide="9">
+    <p class="slide__eyebrow">Pilot wedge · conservative Markham cohort</p>
+    <h2 class="slide__title slide__title--wide">
+      Assets under management at 1% of single-detached homes in{" "}
+      <span style="color: var(--color-orange);">one city</span>.
+    </h2>
+    <div class="slide__body slide__body--tight">
+      <p class="pitch-lede-tight">
+        PV and BESS are the proven energy book. Mixed-fleet DCRs are the dense
+        transaction layer on the same roof. Avoided impact is a separate ledger.
+      </p>
+
+      <div class="pitch-aum">
+        <p class="pitch-aum__head">Asset worth</p>
+        <p class="pitch-aum__head">Yearly transaction</p>
+
+        <article class="pitch-worth pitch-worth--pv">
+          <p class="pitch-worth__kind">PV · installed CAPEX</p>
+          <p class="pitch-worth__phys">~{conservativePilot.aggregatePvMw} MW</p>
+          <p class="pitch-worth__cad">
+            {fmtCadMillions(conservativePilot.valuations.pv.stock)}
+          </p>
+          <p class="pitch-worth__note">
+            Full usable roof · ~{conservativePilot.annualEnergyGwh} GWh/yr
+            generated
+          </p>
+        </article>
+        <article class="pitch-worth pitch-worth--pv pitch-worth--tx">
+          <p class="pitch-worth__kind">PV · household load curtailed</p>
+          <p class="pitch-worth__phys">
+            {fmtCadMillions(conservativePilot.valuations.pv.annual)}/yr
+          </p>
+          <p class="pitch-worth__ratio">
+            {fmtTxOnStock(
+              conservativePilot.valuations.pv.annual,
+              conservativePilot.valuations.pv.stock,
+            )}
+          </p>
+          <p class="pitch-worth__note">
+            ~{conservativePilot.householdOffsetGwh} GWh/yr at OEB typical all-in.
+            Excess is not in this cell.
+          </p>
+        </article>
+
+        <article class="pitch-worth pitch-worth--bess">
+          <p class="pitch-worth__kind">BESS · installed CAPEX</p>
+          <p class="pitch-worth__phys">
+            ~{conservativePilot.aggregateBessMwh} MWh
+          </p>
+          <p class="pitch-worth__cad">
+            {fmtCadMillions(conservativePilot.valuations.bess.stock)}
+          </p>
+          <p class="pitch-worth__note">Buffers surplus into compute hours</p>
+        </article>
+        <article class="pitch-worth pitch-worth--bess pitch-worth--tx">
+          <p class="pitch-worth__kind">BESS · TOU firming</p>
+          <p class="pitch-worth__phys">
+            {fmtCadMillions(conservativePilot.valuations.bess.annual)}/yr
+          </p>
+          <p class="pitch-worth__ratio">
+            {fmtTxOnStock(
+              conservativePilot.valuations.bess.annual,
+              conservativePilot.valuations.bess.stock,
+            )}
+          </p>
+          <p class="pitch-worth__note">
+            ~{conservativePilot.bessCycleGwh} GWh/yr cycled at on-peak minus
+            off-peak
+          </p>
+        </article>
+
+        <article class="pitch-worth pitch-worth--compute">
+          <p class="pitch-worth__kind">Compute · mixed-fleet CAPEX</p>
+          <p class="pitch-worth__phys">
+            {fmtVramPb(conservativePilot.aggregateVramPb)}
+          </p>
+          <p class="pitch-worth__cad">
+            {fmtCadMillions(conservativePilot.valuations.compute.stock)}
+          </p>
+          <p class="pitch-worth__note">
+            ~{fmt(conservativePilot.gpuCount)} GPUs · half used 3090-class, half
+            current-gen
+          </p>
+        </article>
+        <article class="pitch-worth pitch-worth--compute pitch-worth--tx">
+          <p class="pitch-worth__kind">Compute · Bedrock equiv.</p>
+          <p class="pitch-worth__phys">
+            {fmtCadMillions(conservativePilot.valuations.compute.annual)}/yr
+          </p>
+          <p class="pitch-worth__ratio">
+            {fmtTxOnStock(
+              conservativePilot.valuations.compute.annual,
+              conservativePilot.valuations.compute.stock,
+            )}
+          </p>
+          <p class="pitch-worth__note">
+            Sonnet-class proxy, derated throughput. Gross payback{" "}
+            {fmtGrossPaybackMonths(
+              conservativePilot.valuations.compute.annual,
+              conservativePilot.valuations.compute.stock,
+            )}.
+          </p>
+        </article>
+      </div>
+
+      <p class="pitch-section-label">Avoided impact</p>
+      <div class="pitch-avoid">
+        <div class="pitch-avoid__metric">
+          <span class="pitch-avoid__value">
+            {fmtKtCo2e(conservativePilot.opsCo2eTonnesUsGrid)}
+          </span>
+          <span class="pitch-avoid__unit">CO2e/yr ops comparator</span>
+        </div>
+        <div class="pitch-avoid__rule" aria-hidden="true"></div>
+        <div class="pitch-avoid__metric">
+          <span class="pitch-avoid__value">
+            ~{conservativePilot.facilityWaterMl} ML
+          </span>
+          <span class="pitch-avoid__unit">facility water / yr (WUE)</span>
+        </div>
+        <p class="pitch-avoid__aside">
+          Dirty-grid DC ops · evaporative upper bound. Also offsets central hall
+          pressure: land, cooling plant, embodied silicon water.
+        </p>
+      </div>
+
+      <p class="pitch-notes">
+        Percents are gross yearly transaction over installed CAPEX, not protocol
+        take rate or depositor yield. Compute mix is 50/50 used and current-gen
+        at 28 tok/s per GPU. Full physical chain on slide 8. Cohort ~
+        {fmt(conservativePilot.nodes)} homes.
+      </p>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">09 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 10. Business model -->
+  <section class="slide" data-slide="10">
+    <p class="slide__eyebrow">Business model</p>
+    <h2 class="slide__title">Who pays whom.</h2>
+    <div class="slide__body">
+      <div class="pitch-grid-3">
+        <div class="pitch-card">
+          <p class="mono-label">Builders</p>
+          <h3>Finance the node</h3>
+          <p>
+            Borrow to install PV, BESS, and DCR. Repay from energy value, which
+            behaves like infrastructure, and from compute capacity income, the
+            dense side of the book. Non-recourse posture targeted against the
+            asset.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">Depositors</p>
+          <h3>Earn from real assets</h3>
+          <p>
+            Capital funds the loan book. Yield is tied to financing Canadian
+            energy and compute infrastructure, disclosed when the product is
+            live.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">Aggregators</p>
+          <h3>Integrate capacity</h3>
+          <p>
+            Qualifying aggregators, including local compute aggregators built
+            with Aurora Nyxus, interface to the pool under DAI Compute’s
+            standard.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">10 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 11. Team -->
+  <section class="slide" data-slide="11">
+    <p class="slide__eyebrow">Team</p>
+    <h2 class="slide__title">Energy software meets financial governance.</h2>
+    <div class="slide__body">
+      <div class="pitch-grid-2">
+        <div class="pitch-card">
+          <p class="mono-label">Founder</p>
+          <h3>Francis Wang</h3>
+          <p>
+            Over a decade in renewable energy software; patent holder in
+            distributed energy management. Doctoral research in long-term
+            innovation, futures research, and strategic foresight.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">Financial governance</p>
+          <h3>William Yao</h3>
+          <p>
+            Four decades of financial governance and network, including Merrill
+            Lynch. The capital and compliance discipline the credit market
+            requires.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">11 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 12. Traction -->
+  <section class="slide" data-slide="12">
+    <p class="slide__eyebrow">Traction</p>
+    <h2 class="slide__title slide__title--wide">Early clusters, sovereign use, place-based AI.</h2>
+    <div class="slide__body">
+      <div class="pitch-grid-3">
+        <div class="pitch-card">
+          <p class="mono-label">Household clusters</p>
+          <h3>Aggregated compute nodes</h3>
+          <p>
+            Early pilots group individual households into an aggregated compute
+            node: PV and BESS at the edge, DCRs joined under one local
+            aggregator.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">THE Media</p>
+          <h3>Election AI on sovereign compute</h3>
+          <p>
+            Pilot with THE Media to run political and election campaign AI on
+            Canadian hardware. High-stakes workloads stay under Canadian custody.
+          </p>
+        </div>
+        <div class="pitch-card">
+          <p class="mono-label">EverPresence</p>
+          <h3>Indigenous AI and place</h3>
+          <p>
+            Ongoing conversations on Indigenous AI and place-based representation
+            through AI, with EverPresence Advocates (everpresence.ca).
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">12 / {slides}</span>
+    </div>
+  </section>
+
+  <!-- 13. Close -->
+  <section class="slide" data-slide="13">
+    <p class="slide__eyebrow">Invitation</p>
+    <h2 class="slide__title slide__title--wide">Build the next sovereign Canadian compute and energy platform.</h2>
+    <div class="slide__body pitch-grid-2">
+      <div>
+        <p class="slide__lede" style="margin-top:0;">
+          Join depositors, builders, aggregators, and civic partners who want
+          Canadians to own the energy and the compute their AI runs on.
+        </p>
+        <ul class="pitch-list" style="margin-top:1.25rem;">
+          <li>
+            <span class="n">01</span>
+            <span>Finance DERs and DCRs as countable Canadian assets.</span>
+          </li>
+          <li>
+            <span class="n">02</span>
+            <span>
+              Deploy with Aurora Nyxus. Structure districts with SyncI&amp;DLabs.
+              Prove sovereign use with THE Media. Advance Indigenous
+              representation with EverPresence.
+            </span>
+          </li>
+          <li>
+            <span class="n">03</span>
+            <span>
+              Live deck: daicompute.ca/pitch. Print to PDF with background
+              graphics on.
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="pitch-card">
+        <p class="mono-label">Contact</p>
+        <h3 style="font-size:1.35rem;">hello@daicompute.ca</h3>
+        <p style="margin-top:0.75rem;">DAI Compute · daicompute.ca</p>
+        <div class="pitch-partners" style="margin-top:1.25rem;">
+          <div class="pitch-partners__item">
+            <span class="pitch-partners__label">Build</span>
+            <PartnerMark partner="aurora" />
+          </div>
+          <div class="pitch-partners__item">
+            <span class="pitch-partners__label">District</span>
+            <PartnerMark partner="syncid" />
+          </div>
+          <div class="pitch-partners__item">
+            <span class="pitch-partners__label">Sovereign use</span>
+            <PartnerMark partner="themedia" />
+          </div>
+          <div class="pitch-partners__item">
+            <span class="pitch-partners__label">Indigenous outreach</span>
+            <PartnerMark partner="everpresence" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide__footer">
+      <Wordmark variant="nav" />
+      <span class="slide__page">13 / {slides}</span>
+    </div>
+  </section>
+</PitchDeck>

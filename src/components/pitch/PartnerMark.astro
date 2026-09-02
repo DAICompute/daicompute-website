@@ -1,0 +1,42 @@
+---
+/**
+ * Partner typographic marks for the pitch deck.
+ * Aurora and SyncI&DLabs recreate navbar wordmarks locally.
+ * THE Media logo font is Kode Mono (same face as themedia-website Wordmark).
+ * Inline lockup: honey T-H-E initials + "Media". Loaded in PitchDeck.astro.
+ * EverPresence is a typographic lockup for dark canvas.
+ */
+export interface Props {
+  partner: "aurora" | "syncid" | "themedia" | "everpresence";
+  class?: string;
+}
+
+const { partner, class: className = "" } = Astro.props;
+---
+
+{
+  partner === "aurora" ? (
+    <span class:list={["pmark pmark--aurora", className]}>
+      Aurora<span class="pmark__aurora-accent">Nyxus</span>
+    </span>
+  ) : partner === "syncid" ? (
+    <span class:list={["pmark pmark--syncid", className]}>
+      Sync <span class="pmark__syncid-accent">I&amp;D</span> Labs
+    </span>
+  ) : partner === "themedia" ? (
+    <span
+      class:list={["pmark pmark--themedia", className]}
+      aria-label="THE Media"
+      role="img"
+    >
+      <span class="pmark__the-initial">T</span>
+      <span class="pmark__the-initial">H</span>
+      <span class="pmark__the-initial">E</span>
+      <span class="pmark__the-rest">Media</span>
+    </span>
+  ) : (
+    <span class:list={["pmark pmark--everpresence", className]}>
+      Ever<span class="pmark__ever-accent">Presence</span>
+    </span>
+  )
+}

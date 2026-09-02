@@ -24,5 +24,10 @@ export default defineConfig({
   },
   site: 'https://daicompute.ca',
   base: '/',
-  integrations: [sitemap(), react()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/pitch'),
+    }),
+    react(),
+  ],
 });

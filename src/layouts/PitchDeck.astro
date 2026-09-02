@@ -1,0 +1,72 @@
+---
+import "../styles/global.css";
+import "../styles/pitch-deck.css";
+import Wordmark from "../components/Wordmark.astro";
+
+export interface Props {
+  title: string;
+  description?: string;
+  slideCount: number;
+}
+
+const {
+  title,
+  description = "DAI Compute pitch deck. Distributed energy resources and distributed compute resources for sovereign Canadian infrastructure.",
+  slideCount,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="pitch-deck">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@600;700&family=Kode+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <div class="pitch-toolbar" role="banner">
+      <p class="pitch-toolbar__hint">
+        Live deck · {slideCount} slides · Print with backgrounds on
+      </p>
+      <div class="pitch-toolbar__actions">
+        <a href="/">Site</a>
+        <button type="button" id="pitch-print">Print / Save PDF</button>
+      </div>
+    </div>
+
+    <main class="pitch-stage">
+      <slot />
+    </main>
+
+    <script>
+      const btn = document.getElementById("pitch-print");
+      btn?.addEventListener("click", () => window.print());
+
+      // Default: stacked slides + native @page print CSS.
+      // Optional paged.js preview when ?paged=1 (lazy-loaded).
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("paged") === "1") {
+        import("pagedjs")
+          .then(({ Previewer }) => {
+            const previewer = new Previewer();
+            return previewer.preview();
+          })
+          .catch(() => {
+            /* Fall back to native CSS print if preview fails. */
+          });
+      }
+    </script>
+  </body>
+</html>
