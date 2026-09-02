@@ -21,6 +21,11 @@ html.pitch-deck body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Pitch uses <main class="pitch-stage">; skip the site-header offset. */
+html.pitch-deck body:not(.has-hero) main {
+  padding-top: 0;
+}
+
 /* ---- Screen toolbar (hidden when printing) ---- */
 .pitch-toolbar {
   position: fixed;
@@ -797,23 +802,36 @@ html.pitch-deck body {
     display: none !important;
   }
 
+  html.pitch-deck,
+  html.pitch-deck body {
+    background: var(--color-ink);
+    height: auto;
+    overflow: visible;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  html.pitch-deck body:not(.has-hero) main.pitch-stage,
   .pitch-stage {
-    padding: 0;
+    display: block;
+    padding: 0 !important;
     gap: 0;
+    margin: 0;
   }
 
   .slide {
     border: none;
     width: var(--pitch-w);
     height: var(--pitch-h);
+    max-width: none;
     box-shadow: none;
-  }
-
-  html.pitch-deck,
-  html.pitch-deck body {
-    background: var(--color-ink);
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+  }
+
+  .slide:first-child {
+    break-before: avoid;
+    page-break-before: avoid;
   }
 }
 
