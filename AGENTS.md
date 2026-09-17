@@ -9,7 +9,9 @@ The public credibility website for **DAI Compute** (Distributed AI Compute), a *
 - **Domain:** daicompute.ca (Canada-first; use `.ca` everywhere).
 - **Posture:** pre-launch, pre-regulatory. No token issued, no financial product offered yet.
 
-This repository is the **website implementation**. Brand and content direction are maintained separately; do not invent brand or messaging - work from `docs/brand/DESIGN.md` and the existing pages.
+This repository is the **website implementation**. Brand and content direction are maintained in the parent CITAble workspace and the public-safe project docs. Do not invent brand or messaging.
+
+Before changing positioning, claims, token language, or public content, read `../../CITAble/README.md`, `../../CITAble/indicators-strategy/strategy.md`, `../../CITAble/brand/guidelines/voice-and-messaging.md`, and `../../CITAble/ecosystem/regulatory-notes.md`. Use `docs/brand/DESIGN.md` for implementation-specific design rules.
 
 ## Read next (in this repo)
 
