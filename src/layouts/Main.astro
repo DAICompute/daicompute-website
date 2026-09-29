@@ -14,18 +14,17 @@ export interface Props {
 
 const {
   title,
-  description = "DAI Compute. The method for Canadians to invest in, borrow against, and build Canadian energy and AI compute infrastructure. Blockchain sovereign compute.",
+  description = "DAI Compute. The procurement place for Canadian energy and AI compute capacity. Financed through financial partners, managed by DAI Compute.",
   activePath = "",
   heroNav = false,
 } = Astro.props;
 
 const navLinks = [
   { label: "Invest", href: "/invest" },
+  { label: "Buy", href: "/buy" },
   { label: "Build", href: "/build" },
-  { label: "Protocol", href: "/protocol" },
-  { label: "Aggregators", href: "/aggregators" },
+  { label: "Technology", href: "/technology" },
   { label: "Sovereignty", href: "/sovereignty" },
-  { label: "The Future", href: "/future" },
   { label: "About", href: "/about" },
 ];
 
@@ -76,7 +75,7 @@ const year = new Date().getFullYear();
             ))
           }
         </nav>
-        <a href="/invest" class="btn-primary hidden px-5 py-2.5 text-xs font-medium uppercase tracking-[0.14em] lg:inline-block">
+        <a href="/contact" class="btn-primary hidden px-5 py-2.5 text-xs font-medium uppercase tracking-[0.14em] lg:inline-block">
           Register interest
         </a>
       </div>
@@ -95,20 +94,20 @@ const year = new Date().getFullYear();
                 <span style="color: var(--color-orange);">DAI</span> Compute
               </span>
               <p class="mt-4 text-sm leading-relaxed text-slate">
-                The method for Canadians to invest in, borrow against, and build
-                Canadian energy and AI compute infrastructure. Blockchain
-                sovereign compute.
+                The procurement place for Canadian energy and AI compute
+                capacity. Traditional partner financing and commercial purchase
+                first. Capacity managed by DAI Compute.
               </p>
               <p class="field-note mt-5 text-slate/70">
-                Infrastructure finance with blockchain accounting. Built in
-                Canada, backed by Canada, owned by Canadians.
+                Built in Canada. Backed by Canadian assets. Owned and operated
+                under Canadian law.
               </p>
             </div>
             <nav class="flex flex-col gap-2.5 text-sm text-slate">
               <a href="/invest" class="transition-colors hover:text-snow">Invest</a>
+              <a href="/buy" class="transition-colors hover:text-snow">Buy</a>
               <a href="/build" class="transition-colors hover:text-snow">Build</a>
-              <a href="/protocol" class="transition-colors hover:text-snow">Protocol</a>
-              <a href="/aggregators" class="transition-colors hover:text-snow">Aggregators</a>
+              <a href="/technology" class="transition-colors hover:text-snow">Technology</a>
               <a href="/sovereignty" class="transition-colors hover:text-snow">Sovereignty</a>
               <a href="/future" class="transition-colors hover:text-snow">The Future</a>
               <a href="/about" class="transition-colors hover:text-snow">About</a>

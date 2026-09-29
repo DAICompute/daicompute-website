@@ -1,0 +1,89 @@
+---
+import Main from "@/layouts/Main.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import StepCard from "@/components/StepCard.astro";
+import FeatureCard from "@/components/FeatureCard.astro";
+---
+
+<Main
+  title="Buy: Sovereign Canadian compute and compute credits"
+  description="Purchase Canadian AI compute capacity and compute credits (prepaid usage credits) through conventional commercial contracts. Managed by DAI Compute."
+  activePath="/buy"
+>
+  <PageHeader
+    eyebrow="Buy"
+    title="Purchase Canadian compute and compute credits."
+    lede="Start with the workload, controls, and service outcome you need. Procure managed capacity, reserved capacity, or a dedicated deployment through conventional commercial contracts. Compute credits are prepaid usage credits, not speculative tokens."
+  />
+
+  <section class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+    <p class="field-label" style="color: var(--color-yellow);">How it works</p>
+    <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
+      Workload first. Capacity second. Token speculation never.
+    </h2>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <StepCard index="01" title="Map the workload">
+        Describe performance, data residency, control, and assurance needs. We
+        help determine whether managed, reserved, or dedicated capacity fits.
+      </StepCard>
+      <StepCard index="02" title="Contract conventionally">
+        Approved services are intended to be procured through ordinary commercial
+        contracts and payment methods: invoice, bank transfer, or other supported
+        methods once the contracting entity is live.
+      </StepCard>
+      <StepCard index="03" title="Use compute credits">
+        Compute credits are prepaid usage credits for Canadian capacity. They are
+        not an investment product and do not require a blockchain wallet.
+      </StepCard>
+    </div>
+  </section>
+
+  <section class="border-y border-hairline bg-ink-2/30">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <p class="field-label" style="color: var(--color-yellow);">What you can buy</p>
+      <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
+        Capacity shaped to the operating requirement.
+      </h2>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <FeatureCard kicker="Managed" title="Network capacity" accent="yellow">
+          Access Canadian-managed compute capacity coordinated by DAI Compute,
+          with service boundaries agreed in contract.
+        </FeatureCard>
+        <FeatureCard kicker="Reserved" title="Dedicated capacity" accent="yellow">
+          Reserve capacity for regulated or high-assurance workloads where
+          isolation and policy controls matter.
+        </FeatureCard>
+        <FeatureCard kicker="Credits" title="Compute credits" accent="yellow">
+          Prepaid usage credits for AI workloads. Traditional commercial
+          accounting, not crypto speculation.
+        </FeatureCard>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+    <div class="max-w-3xl space-y-4 text-base leading-relaxed text-slate">
+      <p class="field-label" style="color: var(--color-yellow);">Sovereignty posture</p>
+      <h2 class="mt-4 font-display text-2xl font-semibold leading-tight tracking-tight text-snow sm:text-3xl">
+        Canadian residency is one part of the assessment.
+      </h2>
+      <p>
+        Buyers should assess control, access, key custody, data flows, and
+        jurisdiction, not postal code alone. Where a provider subject to U.S. law
+        has possession, custody, or control of data, U.S. legal process may be
+        relevant even when data is stored in Canada. See
+        <a href="/sovereignty" class="accent-link">Sovereignty</a> for the
+        problem framing.
+      </p>
+      <p>
+        Capacity procurement does not require token use. Optional
+        network-participation mechanisms are described under
+        <a href="/technology" class="accent-link">Technology</a> and are not
+        available for purchase today.
+      </p>
+      <a href="/contact" class="btn-primary mt-6 inline-flex items-center px-7 py-3.5 text-sm">
+        Request a workload assessment
+      </a>
+    </div>
+  </section>
+</Main>

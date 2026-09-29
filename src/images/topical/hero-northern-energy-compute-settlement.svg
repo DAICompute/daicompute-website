@@ -7,7 +7,7 @@
   </defs>
   <rect width="1280" height="720" fill="url(#grid)"/>
   <rect x="24" y="24" width="1232" height="672" fill="none" stroke="#2f6f5b" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="640" y="220" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="4" fill="#2f6f5b">IMAGE NEEDED &#8212; SOURCING BRIEF</text>
+  <text x="640" y="220" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="4" fill="#2f6f5b">IMAGE NEEDED: SOURCING BRIEF</text>
   <text text-anchor="middle" font-family="monospace" font-size="24" fill="#1a2320">
     <tspan x='640' y='300'>HERO: Northern Canadian settlement, co-located</tspan>
     <tspan x='640' y='334'>solar/SMR energy + compute. Warm, sovereign,</tspan>

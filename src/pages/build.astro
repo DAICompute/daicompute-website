@@ -3,118 +3,81 @@ import Main from "@/layouts/Main.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import StepCard from "@/components/StepCard.astro";
 import FeatureCard from "@/components/FeatureCard.astro";
-import Placeholder from "@/components/Placeholder.astro";
 ---
 
 <Main
-  title="Build - Non-recourse financing for Canadian energy and compute"
-  description="Borrow against the Canadian energy and compute infrastructure you build. Non-recourse loans secured by physical assets and their cashflows. Zero-down operator paths and institutional facilities."
+  title="Build: Host and expand Canadian energy and compute"
+  description="Expand Canadian energy and compute capacity at qualifying sites. Financial partners may assess financing or lease-to-own after feasibility. Capacity managed by DAI Compute."
   activePath="/build"
 >
   <PageHeader
     eyebrow="Build"
-    title="Borrow against the infrastructure you build."
-    lede="Non-recourse financing for Canadian energy and compute hardware, secured by the physical assets and the cashflows they generate. From a homeowner financing a node at zero down to an energy company financing a data hall."
+    title="Host and expand Canadian capacity."
+    lede="Qualifying sites and builders expand distributed energy and compute. Financial partners may assess financing options or lease-to-own after feasibility and underwriting. Capacity is managed by DAI Compute with qualified suppliers and operators."
   />
 
-  <!-- Loan lifecycle -->
   <section class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-    <p class="field-label" style="color: var(--color-yellow);">How financing works</p>
+    <p class="field-label" style="color: var(--color-yellow);">How it works</p>
     <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
-      Structured like equipment finance. Secured by real assets.
+      Feasibility first. Financing second. No promised rates.
     </h2>
     <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <StepCard index="01" title="Apply against your assets">
-        Node operators, energy companies, and data-centre developers apply for
-        financing to acquire Canadian energy and compute hardware, solar,
-        batteries, and GPU nodes.
+      <StepCard index="01" title="Screen the site">
+        Commercial and industrial sites may be assessed for a right-sized compute
+        installation that serves external demand and optional internal workloads.
       </StepCard>
-      <StepCard index="02" title="Non-recourse, asset-secured">
-        Loans are secured by the physical assets and their contracted
-        cashflows. Recourse is limited to the collateral, with springing
-        recourse to the operating entity for fraud.
+      <StepCard index="02" title="Design the capacity">
+        Solar, battery, and compute are engineered as separate assets before any
+        combined offer. Electrical, safety, network, and operating limits matter.
       </StepCard>
-      <StepCard index="03" title="Draw, build, repay">
-        Funds release against verified delivery and installation. You build,
-        generate energy and compute, and repay on a standard amortising
-        schedule.
+      <StepCard index="03" title="Assess partner financing">
+        Independent financial partners may evaluate financing or lease-to-own
+        after feasibility. Approval, rates, terms, and ownership transfer are
+        partner- and transaction-specific. DAI Compute does not currently offer
+        financing as a live product.
       </StepCard>
     </div>
   </section>
 
-  <!-- Who borrows -->
   <section class="border-y border-hairline bg-ink-2/30">
     <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-      <p class="field-label" style="color: var(--color-yellow);">Who borrows</p>
+      <p class="field-label" style="color: var(--color-yellow);">Who builds</p>
       <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
-        From a rooftop to a data hall.
+        From a capacity host to a commercial micro-datacentre.
       </h2>
       <div class="mt-12 grid gap-6 md:grid-cols-3">
-        <FeatureCard kicker="Node operator" title="Zero down" accent="yellow">
-          Finance solar plus a compute node at zero down, extending the proven
-          solar-lease model to compute. Your earnings service the loan; after
-          the term, you own the hardware.
+        <FeatureCard kicker="Capacity host" title="Site partner" accent="yellow">
+          Factories, warehouses, farms, greenhouses, and other C&amp;I operators
+          may host right-sized compute capacity for external buyers, with
+          optional internal use.
         </FeatureCard>
-        <FeatureCard kicker="Energy company" title="Higher-value load" accent="yellow">
-          Co-locate compute with generation and earn several times the value per
-          MWh of selling electrons wholesale. A Build-to-Manage path from
-          commodity producer to energy-and-compute provider.
+        <FeatureCard kicker="Energy operator" title="Higher-value load" accent="yellow">
+          Co-locate compute with generation so electrons serve Canadian AI
+          capacity under Canadian coordination, not only wholesale export.
         </FeatureCard>
-        <FeatureCard kicker="Data-centre developer" title="Institutional facilities" accent="yellow">
-          Non-recourse facilities structured to institutional scale, secured by
-          the hardware and offtake cashflows, on Canadian soil under Canadian
-          law.
+        <FeatureCard kicker="Developer" title="Dedicated deployment" accent="yellow">
+          Customer-site or commercial micro-datacentre paths for organizations
+          that need dedicated capacity with an agreed service model.
         </FeatureCard>
       </div>
     </div>
   </section>
 
-  <!-- Hybrid legal structure -->
   <section class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-    <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
-      <div>
-        <p class="field-label" style="color: var(--color-yellow);">The structure</p>
-        <h2 class="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
-          Real-world enforceable. On-chain transparent.
-        </h2>
-        <p class="mt-5 text-base leading-relaxed text-slate">
-          Financing runs across two synchronised layers. Off-chain gives lenders
-          real rights: an isolated legal entity, registered security interests
-          under Canadian personal-property law, escrow at a Canadian trust
-          company, and control agreements on collection accounts. On-chain gives
-          transparency and automation: loan NFTs, an authoritative lender
-          register, and an automated payment waterfall.
-        </p>
-        <ul class="mt-6 space-y-3 text-sm leading-relaxed text-slate">
-          <li class="flex gap-3"><span aria-hidden="true" style="color: var(--color-yellow);">&mdash;</span> Bankruptcy-remote SPV isolates the collateral.</li>
-          <li class="flex gap-3"><span aria-hidden="true" style="color: var(--color-yellow);">&mdash;</span> PPSA registrations perfect the security interest.</li>
-          <li class="flex gap-3"><span aria-hidden="true" style="color: var(--color-yellow);">&mdash;</span> A debt-service reserve, held in CADS, compresses your rate.</li>
-        </ul>
-      </div>
-      <Placeholder
-        kind="data"
-        ratio="4/3"
-        label="On-chain / off-chain loan lifecycle diagram"
-        note="Sourcing brief: the four-phase loan flow (escrow, delivery, install/verify + lien, release/repay) across the on-chain and off-chain layers, under Canadian PPSA + SPV. Dataviz build."
-      />
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="border-t border-hairline">
-    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-      <div class="max-w-3xl border-l-2 pl-6" style="border-color: var(--color-yellow);">
-        <p class="field-label text-slate">Where we are</p>
-        <p class="mt-3 text-sm leading-relaxed text-slate">
-          The borrower facility is in design, pending regulatory clarity and the
-          first financing partnerships. Our near-term goal is a first cohort of
-          pilot nodes: real hardware, real generation, real compute. Register
-          your interest to build with us.
-        </p>
-        <a href="/contact" class="mt-6 inline-flex items-center px-7 py-3.5 text-sm font-medium" style="background: var(--color-yellow); color: var(--color-ink);">
-          Register to build
-        </a>
-      </div>
+    <div class="max-w-3xl">
+      <p class="field-label" style="color: var(--color-yellow);">Where we are</p>
+      <h2 class="mt-4 font-display text-2xl font-semibold leading-tight tracking-tight text-snow sm:text-3xl">
+        Pilot cohort. Register for a capacity-host screen.
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-slate">
+        Near-term goal: first pilot sites with real hardware, real generation,
+        and real compute. We do not publish host economics, utilisation
+        guarantees, or loan approvals. Affiliates and suppliers are engaged
+        privately; they are not named as public partners on this site.
+      </p>
+      <a href="/contact" class="btn-primary mt-8 inline-flex items-center px-7 py-3.5 text-sm">
+        Request a capacity-host screen
+      </a>
     </div>
   </section>
 </Main>

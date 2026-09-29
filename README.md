@@ -1,11 +1,10 @@
 # daicompute-website
 
 Public credibility website for **DAI Compute** (Distributed AI Compute):
-daicompute.ca. A **Canadian sovereign InfraFi credit protocol** where
-depositors earn yield from financing Canadian energy and compute
-infrastructure, and builders borrow against the infrastructure they build.
-Every position is backed by physical Canadian assets. Sovereignty is the
-collateral and the moat.
+daicompute.ca. The **procurement place** for Canadian energy and AI compute
+capacity. Traditional paths lead through financial partners (financing and
+lease-to-own) and commercial compute purchase. Blockchain is an optional
+emerging-technology financing path. Capacity is managed by DAI Compute.
 
 Part of the FW.VISION group of ventures. Pre-launch and pre-regulatory; no
 financial product is offered yet.
@@ -30,10 +29,10 @@ IBM Plex Mono. Full spec: `docs/brand/DESIGN.md`.
 
 ## Pages
 
-Invest (deposit for yield), Build (borrow to build), Protocol (CADS / sCADS /
-CROWN), Sovereignty (the problem: US dependence + CLOUD Act), The Future
-(50-year vision + live ForesightScope), About, Contact (mailto template, no
-backend on static hosting).
+Invest (capital procurement / partner financing), Buy (compute and credits),
+Build (hosts and builders), Technology (optional blockchain path; `/protocol`
+redirects here), Sovereignty, The Future (footer/teaser), About, Contact
+(mailto template, no backend on static hosting).
 
 ## Develop
 
@@ -42,9 +41,11 @@ for the private `@fw-vision/*` packages, read by `.npmrc`.
 
 ```sh
 bun install
-bunx astro build      # build (NOT npm run build)
-bunx astro dev        # local dev (do not leave running in CI/agents)
+bun run build         # or: bunx astro build (NOT npm run build)
+bun run dev           # binds 0.0.0.0 for Tailnet reachability; do not leave running in CI/agents
 ```
+
+Dev and preview bind `0.0.0.0` via `astro.config.mjs` and the `package.json` scripts so other Tailnet devices can open the site (for example `http://fcwang-elitemini-series.tail0f7891.ts.net:4321`).
 
 ## Content
 

@@ -1,0 +1,125 @@
+---
+import Main from "@/layouts/Main.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import TokenCard from "@/components/TokenCard.astro";
+import FeatureCard from "@/components/FeatureCard.astro";
+import MarketFlywheel from "@/components/MarketFlywheel.astro";
+---
+
+<Main
+  title="Technology: Optional emerging financing path"
+  description="Blockchain is an optional emerging-technology financing and verification path into the same Canadian energy and compute capacity. Traditional partner financing leads. No token product is offered today."
+  activePath="/technology"
+>
+  <PageHeader
+    eyebrow="Technology"
+    title="Optional emerging-technology financing. Same Canadian capacity."
+    lede="Traditional paths lead: financial partners, commercial compute purchase, and capacity hosts. Blockchain is an optional emerging-technology financing and verification path into the same physical Canadian energy and compute. No token, deposit, or yield product is offered today."
+  />
+
+  <section class="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+    <div class="max-w-3xl space-y-4 text-base leading-relaxed text-slate">
+      <p>
+        If you are here to invest, buy compute, or host capacity, start with
+        <a href="/invest" class="accent-link">Invest</a>,
+        <a href="/buy" class="accent-link">Buy</a>, or
+        <a href="/build" class="accent-link">Build</a>. This page documents a
+        secondary path under research and design.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-y border-hairline bg-ink-2/30">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <p class="field-label" style="color: var(--color-orange);">Instrument stack (candidates)</p>
+      <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
+        Designed instruments. Not an offer.
+      </h2>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <TokenCard
+          symbol="CADS"
+          name="Synthetic dollar"
+          tagline="Algorithmic stablecoin design. Stabilised against CAD over a blended, algorithmically-valued reserve. Candidate entry point; does not accrue yield."
+          attributes={[
+            { k: "Type", v: "Algorithmic stablecoin (design)" },
+            { k: "Peg", v: "Tracks CAD (algorithmic)" },
+            { k: "Reserve", v: "Blended, multi-method valued" },
+            { k: "Status", v: "Not issued" },
+          ]}
+        />
+        <TokenCard
+          symbol="sCADS"
+          name="Staked yield"
+          tagline="Yield-bearing counterpart design. Intended to earn from an infrastructure loan book plus idle T-bills, only after regulatory clarity."
+          accent="yellow"
+          attributes={[
+            { k: "Type", v: "Staked yield (design)" },
+            { k: "Yield", v: "Loan interest + T-bills (intended)" },
+            { k: "Status", v: "Not offered" },
+          ]}
+        />
+        <TokenCard
+          symbol="CROWN"
+          name="Governance"
+          tagline="Governance design for collateral standards, LTV tiers, fees, and network expansion."
+          accent="red"
+          attributes={[
+            { k: "Type", v: "Governance (design)" },
+            { k: "Staking", v: "sCROWN backstop (considered)" },
+            { k: "Status", v: "Not issued" },
+          ]}
+        />
+      </div>
+      <p class="field-note mt-6 text-slate/60">
+        Token names are candidates pending trademark and ticker validation. Nothing on this page is an offer to sell or a solicitation.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+    <p class="field-label" style="color: var(--color-orange);">Intended market loop</p>
+    <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow">
+      Capital funds capacity. Capacity serves buyers. Capacity is Canadian.
+    </h2>
+    <div class="mt-10">
+      <MarketFlywheel />
+    </div>
+  </section>
+
+  <section class="border-y border-hairline bg-ink-2/30">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <div class="grid gap-6 md:grid-cols-2">
+        <FeatureCard kicker="Verification" title="Attestation layer">
+          Smart-meter and proof-of-compute attestations are designed to prove
+          that financed assets generate Canadian renewable energy and provide
+          Canadian compute capacity.
+        </FeatureCard>
+        <FeatureCard kicker="Regulatory" title="Canadian-law pathway">
+          Any live product would require CSA clarity, appropriate registrations,
+          and Canadian security structures. Traditional partner financing does
+          not wait on this page to be useful; see Invest and Build.
+        </FeatureCard>
+      </div>
+      <p class="field-note mt-8 max-w-3xl text-slate/70">
+        DAI Compute is pre-launch. No token has been issued and no financial
+        product is offered. Live figures will be published only after regulatory
+        clarity. Aggregator integration details remain at
+        <a href="/aggregators" class="accent-link">/aggregators</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 py-16 text-center lg:px-10">
+    <h2 class="mx-auto max-w-2xl font-display text-2xl font-semibold leading-tight tracking-tight text-snow sm:text-3xl">
+      Prefer the traditional path?
+    </h2>
+    <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate">
+      Register interest to invest, buy compute, or host capacity through
+      financial partners and commercial contracts.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-5">
+      <a href="/contact" class="btn-primary inline-flex items-center px-7 py-3.5 text-sm">Register interest</a>
+      <a href="/invest" class="btn-ghost inline-flex items-center px-7 py-3.5 text-sm">Invest</a>
+    </div>
+  </section>
+</Main>

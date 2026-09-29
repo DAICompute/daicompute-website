@@ -1,9 +1,7 @@
 ---
 import Main from "@/layouts/Main.astro";
 import StatCounter from "@/components/StatCounter.astro";
-import StepCard from "@/components/StepCard.astro";
 import FeatureCard from "@/components/FeatureCard.astro";
-import TokenCard from "@/components/TokenCard.astro";
 import GridDemo from "@/components/GridDemo.astro";
 import { ForesightScope } from "@fw-vision/widgets";
 import "@fw-vision/widgets/style.css";
@@ -11,8 +9,8 @@ import { sovereigntyForesightData } from "@/data/foresight";
 ---
 
 <Main
-  title="DAI Compute - Invest in and build Canadian sovereign compute"
-  description="The method for Canadians to invest in, borrow against, and build Canadian energy and AI compute infrastructure. Asset-backed, verifiable, sovereign by law. Blockchain sovereign compute."
+  title="DAI Compute: Procure Canadian energy and compute capacity"
+  description="DAI Compute is the procurement place for Canadian energy and AI compute capacity. Financial partners, commercial compute purchase, and managed Canadian capacity."
   activePath="/"
   heroNav={true}
 >
@@ -21,28 +19,28 @@ import { sovereigntyForesightData } from "@/data/foresight";
     <div class="tech-grid absolute inset-0"></div>
     <div class="relative mx-auto max-w-7xl px-6 pb-24 pt-40 sm:pt-48 lg:px-10 lg:pb-28">
       <p class="field-label" style="color: var(--color-orange);">
-        Blockchain sovereign compute &middot; Canada
+        Canadian energy and compute capacity
       </p>
       <h1 class="mt-8 max-w-4xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-snow sm:text-5xl lg:text-[4.25rem]">
-        How Canadians can build Canadian
+        How Canadians procure Canadian
         <span class="text-energy"> energy and compute.</span>
       </h1>
       <p class="mt-8 max-w-2xl text-lg leading-relaxed text-mist">
-        DAI Compute is a two-sided credit protocol. Depositors earn yield from
-        building Canadian infrastructure. Builders borrow against the energy and
-        compute they build. Every position is backed by physical Canadian
-        assets, verifiable on-chain, and sovereign by law.
+        DAI Compute is the procurement place where capital and customers connect
+        to Canadian energy and AI compute capacity. Traditional paths lead:
+        financial partners for financing and lease-to-own pathways, commercial
+        purchase of compute and compute credits, and hosts expanding capacity.
+        Capacity is managed by DAI Compute.
       </p>
       <div class="mt-11 flex flex-wrap items-center gap-5">
         <a href="/invest" class="btn-primary inline-flex items-center px-7 py-3.5 text-sm">
-          Invest for yield
+          Invest in capacity
         </a>
-        <a href="/build" class="btn-ghost inline-flex items-center px-7 py-3.5 text-sm">
-          Borrow to build
+        <a href="/buy" class="btn-ghost inline-flex items-center px-7 py-3.5 text-sm">
+          Buy compute
         </a>
       </div>
 
-      <!-- Verified national context (NOT live protocol metrics; pre-CSA) -->
       <div class="mt-20 border-t border-hairline pt-10">
         <p class="field-label mb-6 text-slate">The Canadian opportunity, in verified numbers</p>
         <StatCounter
@@ -63,21 +61,23 @@ import { sovereigntyForesightData } from "@/data/foresight";
       <div>
         <p class="field-label" style="color: var(--color-orange);">The gap</p>
         <h2 class="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
-          The energy and the talent exist. The financing mechanism does not.
+          The energy and the talent exist. The procurement place does not.
         </h2>
       </div>
       <div class="max-w-2xl space-y-5 text-base leading-relaxed text-slate">
         <p>
-          Canada spent $705M on one centralised supercomputer for academic
-          researchers. There is no mechanism for the 140,000 professionals in
-          industry, the startups, the energy companies, or the citizens to
-          finance and profit from building sovereign compute.
+          Canada spent $705M on one centralized supercomputer for academic
+          researchers. There is no clear place for industry, startups, energy
+          companies, hosts, or infrastructure capital to finance and buy
+          Canadian energy and compute capacity together.
         </p>
         <p>
           So capital and talent flow abroad, the cheapest clean energy in the
-          G7 powers foreign-owned data centres, and every Canadian business on a
-          foreign cloud carries CLOUD Act exposure. DAI Compute is the credit
-          market that connects Canadian capital to Canadian infrastructure.
+          G7 powers foreign-owned data centres, and Canadian businesses on
+          foreign-operated cloud face residency and control questions, including
+          where U.S. law may reach data held by U.S.-linked providers. DAI
+          Compute is the procurement place that connects Canadian capital to
+          Canadian capacity.
         </p>
         <a href="/sovereignty" class="accent-link field-note inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]">
           The problem we solve
@@ -87,139 +87,134 @@ import { sovereigntyForesightData } from "@/data/foresight";
     </div>
   </section>
 
-  <!-- The demonstration -->
+  <!-- Canada2080 -->
   <section class="border-y border-hairline bg-ink-2/30">
     <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <p class="field-label" style="color: var(--color-orange);">The thesis, visualised</p>
+      <p class="field-label" style="color: var(--color-orange);">Infrastructure interest</p>
+      <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
+        Interest in Canadian infrastructure is rising. We help turn it into capacity.
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate">
+        Initiatives such as
+        <a href="https://canada2080.org" class="accent-link">Canada2080</a>
+        rally interest in investing in Canadian infrastructure. DAI Compute works
+        with those initiatives to help inform the best ways to invest and deploy
+        into Canadian energy and compute. Financial firms and other capital
+        sources that want Canadian infrastructure exposure can use DAI Compute as
+        where that capital is procured into real capacity.
+      </p>
+    </div>
+  </section>
+
+  <!-- The demonstration -->
+  <section class="border-b border-hairline">
+    <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      <p class="field-label" style="color: var(--color-orange);">The thesis, visualized</p>
       <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
         Centralised serves a few. Distributed builds sovereign capacity everywhere.
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate">
         Watch the two models alternate, or select one. Centralised compute
         concentrates in one location; distributed DAI Compute lights up nodes
-        coast to coast, powered by Canadian energy, owned by Canadians.
+        coast to coast, powered by Canadian energy, managed under Canadian law.
       </p>
       <div class="mt-10">
         <GridDemo />
       </div>
-      <p class="field-note mt-4 text-slate/60">
-        Schematic interim, auto-cycling. The full interactive geographic
-        demonstration (choropleth map of Canada, energy and data-centre assets,
-        sovereign vs US-owned) is a visual-tooling build; see the handoff plan.
-      </p>
     </div>
   </section>
 
-  <!-- Two-sided market -->
+  <!-- Three paths -->
   <section class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-    <p class="field-label" style="color: var(--color-orange);">A two-sided market</p>
+    <p class="field-label" style="color: var(--color-orange);">How capacity is procured</p>
     <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
-      One side supplies capital. The other side builds.
+      Invest. Buy. Build.
     </h2>
-    <div class="mt-14 grid gap-6 md:grid-cols-2">
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
       <div class="card-lift flex flex-col border border-hairline bg-ink-2/60 p-8">
         <span class="field-label" style="color: var(--color-orange);">Invest</span>
-        <h3 class="mt-3 font-display text-2xl font-semibold text-snow">Earn yield from building Canadian infrastructure.</h3>
+        <h3 class="mt-3 font-display text-2xl font-semibold text-snow">Capital into Canadian capacity.</h3>
         <p class="mt-4 text-sm leading-relaxed text-slate">
-          Deposit into <span class="ticker text-mist">CADS</span>, an
-          algorithmically stabilised synthetic Canadian dollar. Stake for
-          <span class="ticker text-mist">sCADS</span> and earn yield drawn from
-          real energy and compute loans, not token subsidies. Reserve composition
-          and valuation methods are disclosed.
+          Financial firms and infrastructure capital procure into Canadian energy
+          and compute. Financial partners may offer financing or lease-to-own
+          pathways for qualifying deployments. Register interest; no live rates
+          are published.
         </p>
         <a href="/invest" class="accent-link field-note mt-6 inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]">
           How investing works <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
       <div class="card-lift flex flex-col border border-hairline bg-ink-2/60 p-8">
-        <span class="field-label" style="color: var(--color-yellow);">Build</span>
-        <h3 class="mt-3 font-display text-2xl font-semibold text-snow">Borrow against the infrastructure you build.</h3>
+        <span class="field-label" style="color: var(--color-yellow);">Buy</span>
+        <h3 class="mt-3 font-display text-2xl font-semibold text-snow">Sovereign compute and credits.</h3>
         <p class="mt-4 text-sm leading-relaxed text-slate">
-          Non-recourse financing for Canadian energy and compute hardware,
-          secured by the assets and their cashflows. Zero-down paths for node
-          operators; institutional facilities for energy companies and
-          data-centre developers.
+          Purchase Canadian compute capacity and compute credits (prepaid usage
+          credits for AI workloads) through conventional commercial contracts.
+          Start with the workload and controls you need.
         </p>
-        <a href="/build" class="accent-link field-note mt-6 inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]" style="color: var(--color-yellow);">
+        <a href="/buy" class="accent-link field-note mt-6 inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]" style="color: var(--color-yellow);">
+          How buying works <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+      <div class="card-lift flex flex-col border border-hairline bg-ink-2/60 p-8">
+        <span class="field-label" style="color: var(--color-red);">Build</span>
+        <h3 class="mt-3 font-display text-2xl font-semibold text-snow">Host and expand capacity.</h3>
+        <p class="mt-4 text-sm leading-relaxed text-slate">
+          Qualifying sites and builders expand distributed energy and compute.
+          Financial partners may assess financing or lease-to-own after
+          feasibility. Capacity is managed by DAI Compute.
+        </p>
+        <a href="/build" class="accent-link field-note mt-6 inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]" style="color: var(--color-red);">
           How building works <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Why it holds: feature grid -->
+  <!-- Why it holds -->
   <section class="border-t border-hairline bg-ink-2/30">
     <div class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
       <p class="field-label" style="color: var(--color-orange);">Why it holds</p>
       <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
-        Backed by the physical backbone of Canadian AI.
+        Canadian capacity, managed with care.
       </h2>
       <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <FeatureCard kicker="Asset-backed" title="Backed by real assets">
-          Every position is collateralised by physical Canadian infrastructure:
-          solar, batteries, and compute hardware. Not fiat volatility, not
-          token speculation.
+        <FeatureCard kicker="Procurement" title="A clear place for capital">
+          Infrastructure interest converts into energy and compute capacity
+          through one procurement surface, not scattered foreign cloud alone.
         </FeatureCard>
-        <FeatureCard kicker="Verifiable" title="Proof of reserves">
-          View treasury assets, loans, and collateral on-chain at any time. An
-          authoritative on-chain lender register, not private reports.
+        <FeatureCard kicker="Partners" title="Financing pathways">
+          Financial partners may offer financing options or lease-to-own for
+          qualifying deployments after feasibility and underwriting. Pathways
+          under development; register interest.
         </FeatureCard>
-        <FeatureCard kicker="Sovereign" title="Canadian jurisdiction" accent="red">
-          Assets on Canadian soil under Canadian jurisdiction. Free of CLOUD Act
-          exposure. Sovereignty is the collateral and the moat.
+        <FeatureCard kicker="Managed" title="Capacity under Canadian law" accent="red">
+          Assets on Canadian soil, coordinated and managed by DAI Compute with
+          qualified suppliers and operators. Residency is one part of a broader
+          sovereignty assessment.
         </FeatureCard>
         <FeatureCard kicker="Complementary" title="Alongside the government">
-          Private capital mobilised alongside the federal programme, not against
-          it. The market mechanism public funding alone cannot provide.
+          Private capital mobilised alongside federal sovereign-compute
+          programmes, not against them.
         </FeatureCard>
       </div>
     </div>
   </section>
 
-  <!-- Token teaser -->
+  <!-- Technology teaser -->
   <section class="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-    <p class="field-label" style="color: var(--color-orange);">The instrument stack</p>
+    <p class="field-label" style="color: var(--color-orange);">Optional path</p>
     <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
-      Three instruments. One stable unit of account.
+      Emerging technology, same Canadian capacity.
     </h2>
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-      <TokenCard
-        symbol="CADS"
-        name="Synthetic dollar"
-        tagline="Algorithmic stablecoin. Stabilised against CAD over a blended reserve. The stable entry point; does not accrue yield."
-        attributes={[
-          { k: "Type", v: "Algorithmic stablecoin" },
-          { k: "Peg", v: "Tracks CAD (algorithmic)" },
-          { k: "Reserve", v: "Blended, multi-method valued" },
-          { k: "Yield", v: "None (liquid unit)" },
-        ]}
-      />
-      <TokenCard
-        symbol="sCADS"
-        name="Staked yield"
-        tagline="Stake CADS to earn from the infrastructure loan book and idle-reserve T-bills."
-        accent="yellow"
-        attributes={[
-          { k: "Yield", v: "Loan interest + T-bills" },
-          { k: "Mechanism", v: "Rising exchange rate" },
-          { k: "Redeem", v: "Epoch queue (Northern Queue)" },
-        ]}
-      />
-      <TokenCard
-        symbol="CROWN"
-        name="Governance"
-        tagline="Governs collateral standards, loan-to-value tiers, fees, and how the network expands."
-        accent="red"
-        attributes={[
-          { k: "Role", v: "Protocol governance" },
-          { k: "Staking", v: "sCROWN backstop" },
-          { k: "Escrow", v: "veCROWN (considered)" },
-        ]}
-      />
-    </div>
-    <p class="field-note mt-6 text-slate/60">
-      Token names are candidates pending trademark and ticker validation. See the protocol page.
+    <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate">
+      An optional blockchain financing and verification path is under
+      development for the same physical outcome. It is not our public category
+      identity. No token, deposit, or yield product is offered today.
     </p>
+    <a href="/technology" class="accent-link field-note mt-7 inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]">
+      Read the technology path <span aria-hidden="true">&rarr;</span>
+    </a>
   </section>
 
   <!-- The future teaser -->
@@ -230,13 +225,13 @@ import { sovereigntyForesightData } from "@/data/foresight";
         <div>
           <p class="field-label" style="color: var(--color-orange);">The long horizon</p>
           <h2 class="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
-            The first vehicle on a fifty-year journey.
+            Capacity for the Canada that is arriving.
           </h2>
           <p class="mt-6 max-w-xl text-base leading-relaxed text-mist">
             By 2080, up to 3.7 billion people may live outside the human climate
             niche. Canada sits in the temperature zone people will move toward.
-            Sovereign energy and compute is the settlement foundation for the
-            Canada that is arriving.
+            Sovereign energy and compute is settlement foundation for that
+            future.
           </p>
           <a href="/future" class="accent-link field-note mt-7 inline-flex w-fit items-center gap-1.5 uppercase tracking-[0.16em]">
             See the fifty-year trajectory <span aria-hidden="true">&rarr;</span>
@@ -259,15 +254,15 @@ import { sovereigntyForesightData } from "@/data/foresight";
   <section class="mx-auto max-w-7xl px-6 py-24 text-center lg:px-10">
     <p class="field-label" style="color: var(--color-orange);">Join the first cohort</p>
     <h2 class="mx-auto mt-4 max-w-3xl font-display text-3xl font-semibold leading-tight tracking-tight text-snow sm:text-4xl">
-      Back Canadian economic sovereignty.
+      Procure Canadian economic sovereignty.
     </h2>
     <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate">
-      DAI Compute is in its early stages, pre-regulatory clarity. Register your
-      interest to invest, build, or partner.
+      DAI Compute is pre-launch. Register your interest to invest, buy, build,
+      or partner. No financial product is offered yet.
     </p>
     <div class="mt-9 flex flex-wrap justify-center gap-5">
       <a href="/contact" class="btn-primary inline-flex items-center px-7 py-3.5 text-sm">Register interest</a>
-      <a href="/protocol" class="btn-ghost inline-flex items-center px-7 py-3.5 text-sm">Read the protocol</a>
+      <a href="/technology" class="btn-ghost inline-flex items-center px-7 py-3.5 text-sm">Emerging technology path</a>
     </div>
   </section>
 </Main>

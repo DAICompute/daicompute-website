@@ -9,6 +9,13 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
+  // Bind to all interfaces so Tailnet hosts can reach `bun run dev` / preview.
+  server: {
+    host: '0.0.0.0',
+  },
+  preview: {
+    host: '0.0.0.0',
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
